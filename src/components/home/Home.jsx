@@ -10,6 +10,15 @@ const Home = () => {
                 <div className='bg-black absolute inset-0 bg-opacity-50'></div>
             </div>
             <Nav></Nav>
+
+            <div className='grid grid-cols-8'>
+                <div className='col-span-3'>
+                    <h1 className='font-bebas'></h1>
+                </div>
+                <div className='col-span-5'>
+                    hello
+                </div>
+            </div>
         </div>
     );
 };

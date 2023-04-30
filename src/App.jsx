@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='font-monts'>
       <Outlet></Outlet>
     </div>
   );
