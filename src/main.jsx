@@ -4,6 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/home/Home.jsx'
+import { fetchDestinations } from './fetcher/fetcher.js'
+import Destinations from './components/home/Destinations.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -12,7 +14,14 @@ const routes = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        children:[
+          {
+            path:'/',
+            element:<Destinations></Destinations>,
+            loader:fetchDestinations,
+          }
+        ]
       }
     ]
   }
