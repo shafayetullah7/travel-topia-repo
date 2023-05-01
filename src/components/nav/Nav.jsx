@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logoLight from '../../assets/logo-light.png';
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../authProvider/AuthProvider';
 
 const Nav = () => {
     const navigate = useNavigate();
+    const {user,loading} = useContext(AuthContext);
     return (
         <div className='flex justify-between items-center gap-10 lg:mx-28 mt-5'>
             <img src={logoLight} alt="logo" />
@@ -18,7 +20,12 @@ const Nav = () => {
                 <Link className='text-white hover:bg-gray-500 duration-100 focus:bg-opacity-5 px-5 py-2 rounded-md'>Blog</Link>
                 <Link className='text-white hover:bg-gray-500 duration-100 focus:bg-opacity-5 px-5 py-2 rounded-md'>Contact</Link>
             </div>
-            <button className='px-8 py-2 font-semibold rounded-md bg-amber-300' onClick={()=>{navigate('/login')}}>Login</button>
+            {
+                (!user && !loading) && <button className='px-8 py-2 font-semibold rounded-md bg-amber-300' onClick={()=>{navigate('/login')}}>Login</button>
+            }
+            {
+                user && <p>{user.email}</p>
+            }
         </div>
     );
 };
