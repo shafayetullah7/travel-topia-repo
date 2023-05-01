@@ -4,8 +4,11 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/home/Home.jsx'
-import { fetchDestinations } from './fetcher/fetcher.js'
+import { fetchDestinations, fetchSingleDestination } from './fetcher/fetcher.js'
 import Destinations from './components/home/Destinations.jsx'
+import SingleDestination from './components/home/SingleDestination.jsx'
+import Login from './components/sign/Login.jsx'
+import Register from './components/sign/Register.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -20,8 +23,21 @@ const routes = createBrowserRouter([
             path:'/',
             element:<Destinations></Destinations>,
             loader:fetchDestinations,
+          },
+          {
+            path:'/destination/:id',
+            element:<SingleDestination></SingleDestination>,
+            loader:fetchSingleDestination
           }
         ]
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
       }
     ]
   }

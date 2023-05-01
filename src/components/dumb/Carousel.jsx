@@ -50,7 +50,7 @@ export default function Carousel({data,current}) {
             )}
           </SwiperSlide>
         ))}
-        <div className='relative bottom-14 flex gap-3 z-10'>
+        <div className='relative left-10 bottom-14 flex gap-3 z-10'>
             <Prev current={current} data={data}></Prev>
             <Next current={current} data={data}></Next>
         </div>
