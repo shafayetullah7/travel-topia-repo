@@ -8,7 +8,7 @@ const Home = () => {
         <div className='relative'>
             <div className='w-full h-screen fixed top-0 -z-20'>
                 <img className='w-full h-full object-cover object-bottom' src={banner} alt="banner" />
-                <div className='bg-black absolute inset-0 bg-opacity-50'></div>
+                <div className='bg-black absolute inset-0 bg-opacity-60'></div>
             </div>
             <Nav></Nav>
 

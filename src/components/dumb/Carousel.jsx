@@ -43,7 +43,7 @@ export default function Carousel({data,current}) {
                 <div>
                     <div className={`w-full h-[250px] ${isActive?'border-4 border-yellow-400 scale-110 duration-500':''} rounded-xl relative overflow-hidden bg-gradient-to-t from-black bg-opacity-40 `}>
                         <img className='-z-10 w-full h-full object-cover object-center absolute top-0' src={slide.image_link} alt="destination image" />
-                        <h1 className='z-10 absolute font-bebas text-white bottom-6 left-4 text-4xl'>{slide.destination}</h1>
+                        <h1 className={`z-10 absolute font-bebas text-white bottom-6 left-4 text-4xl`}>{slide.destination}</h1>
                     </div>
                 </div>
                 
